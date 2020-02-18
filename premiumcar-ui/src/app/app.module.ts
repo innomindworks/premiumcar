@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TreeviewModule } from 'ngx-treeview';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule} from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +30,9 @@ import { SearchCarResultComponentComponent } from './components/search-car-resul
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TreeviewModule.forRoot() 
+    TreeviewModule.forRoot(),
+    NgbModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

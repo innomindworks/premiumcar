@@ -1,104 +1,3 @@
-<!-- <section id="sellcarshowcase">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <strong>Login</strong>
-                        </div>
-                        <div class="panel-body">
-                            <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">
-                                    Car Year</label>
-                                <div class="col-sm-8">
-                                   <select class="form-control" >
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">
-                                    Select Car</label>
-                                <div class="col-sm-8">
-                                   <select class="form-control" >
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                </select>
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">
-                                    Car Model</label>
-                                <div class="col-sm-8">
-                                   <select class="form-control" >
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                </select>
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">
-                                    Ownership</label>
-                                <div class="col-sm-8">
-                                   <select class="form-control" >
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                </select>
-                                </div>
-                            </div>
-                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">
-                                    City</label>
-                                <div class="col-sm-8">
-                                   <select class="form-control" >
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                </select>
-                                </div>
-                            </div>
-                            
-                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">
-                                    Expected Price</label>
-                                <div class="col-sm-8">
-                                 <input type="email" class="form-control" id="email">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">
-                                    Add Images</label>
-                                <div class="col-sm-8">
-                                 
-                                </div>
-                            </div>
-                           
-                            <div class="form-group last">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-success btn-sm">
-                                        Submit</button>
-                                         <button type="reset" class="btn btn-default btn-sm">
-                                        Reset</button>
-                                </div>
-                            </div>
-                            </form>
-                        </div>
-                        
-                </div>
-            </div>
-        </div>
-    </div>    
-</section> -->
-
-
 <div class="sellcarshowcase">
 <div class="col-md-8 offset-md-2">
     <span class="anchor" id="formUserEdit"></span>
@@ -107,85 +6,231 @@
     <!-- form user info -->
     <div class="card card-outline-secondary">
         <div class="card-header">
-            <h3 class="mb-0">User Information</h3>
+            <h3 class="mb-0">Car Details</h3>
         </div>
         <div class="card-body">
             <form class="form" role="form" autocomplete="off">
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Car Year</label>
+                    <label class="col-lg-3 col-form-label form-control-label sellCarLabel"><b> Car Year </b></label>
                     <div class="col-lg-9">
-                        <select class="custom-select" formControlName="carYear">
+                         <select class="form-control custom-select" formControlName="carYear">
                             <option *ngFor="let year of yearList" >{{year}}</option>
-                         </select>
+                         </select> 
+                         
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                    <label class="col-lg-3 col-form-label form-control-label sellCarLabel"><b>Car Brand</b></label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" value="Bishop">
+                            <select class="form-control custom-select" formControlName="modelControl" (change)="onChangeCarList($event.target.value)">
+                                    <option [value] = "null" disabled selected hidden>---Please select Car---</option>
+                                    <option [value]="carModels.key" *ngFor="let carModels of carModelsList">{{carModels.key}}</option>
+                            </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="email" value="email@gmail.com">
+                        <label class="col-lg-3 col-form-label form-control-label sellCarLabel"><b>Car Model Name</b></label>
+                        <div class="col-lg-9">
+                                <select class="form-control custom-select" formControlName="modelControl" (change)="onChangeModelList($event.target.value)">
+                                        <option [value] = "null" disabled selected hidden>---Please select Car Model---</option>
+                                        <option [value]="models.value" *ngFor="let models of modelsList">{{models.value}}</option>
+                                </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Company</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="text" value="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Website</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="url" value="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
-                    <div class="col-lg-9">
-                        <select id="user_time_zone" class="form-control" size="0">
-                            <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                            <option value="Alaska">(GMT-09:00) Alaska</option>
-                            <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                            <option value="Arizona">(GMT-07:00) Arizona</option>
-                            <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                            <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                            <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                            <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Username</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="text" value="janeuser">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="password" value="11111122333">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="password" value="11111122333">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label"></label>
-                    <div class="col-lg-9">
-                        <input type="reset" class="btn btn-secondary" value="Cancel">
-                        <input type="button" class="btn btn-primary" value="Save Changes">
-                    </div>
-                </div>
             </form>
         </div>
     </div>
     <!-- /form user info -->
+    <div class="page-content">
+    <div class="wizard-v5-content">
+			<div class="wizard-form">
+		        <form class="form-register" id="form-register" action="#" method="post">
+		        	<div id="form-total">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+			            	<span class="step-text">Personal Information</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+								<div class="form-row">
+									<div class="form-holder">
+										<label for="first_name">First Name</label>
+										<input type="text" placeholder="ex: Laura" class="form-control" id="first_name" name="first_name">
+									</div>
+									<div class="form-holder">
+										<label for="last_name">Last Name</label>
+										<input type="text" placeholder="ex: Vaughn" class="form-control" id="last_name" name="last_name">
+									</div>
+								</div>
+								<div class="form-row">
+									<div id="radio">
+										<label for="gender">Gender:</label>
+										<input type="radio" name="gender" value="male" checked> Male
+  										<input type="radio" name="gender" value="female"> Female
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="address">Address Location</label>
+										<input type="text" placeholder="622 Dixie Path, South Tobinchester, UT 98336" class="form-control" id="address" name="address">
+										<span><i class="zmdi zmdi-pin"></i></span>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-3">
+										<label for="phone">Phone Number</label>
+										<input type="text" placeholder="+1 777-888-8888" class="form-control" id="phone" name="phone">
+									</div>
+									<div class="form-holder">
+										<label for="code">Zip Code</label>
+										<input type="text" class="form-control" id="code" name="code">
+									</div>
+								</div>
+								<div class="form-row form-row-date">
+									<div class="form-holder form-holder-2">
+										<label for="date" class="special-label">Date of Birth:</label>
+										<select name="date" id="date" class="form-control">
+											<option value="15" selected>15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+										</select>
+										<select name="month" id="month" class="form-control">
+											<option value="Jan" selected>Jan</option>
+											<option value="Feb">Feb</option>
+											<option value="Mar">Mar</option>
+											<option value="Apr">Apr</option>
+											<option value="May">May</option>
+										</select>
+										<select name="year" id="year" class="form-control">
+											<option value="2018" selected>2018</option>
+											<option value="2017">2017</option>
+											<option value="2016">2016</option>
+											<option value="2015">2015</option>
+											<option value="2014">2014</option>
+											<option value="2013">2013</option>
+										</select>
+									</div>
+								</div>
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+			            	<span class="step-text">Bank Information</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+								<div class="form-row">
+									<div class="form-holder">
+										<label for="bank">Bank Name:</label>
+										<input type="text" placeholder="UsBank" class="form-control input-step-2" id="bank" name="bank">
+										<span><i class="zmdi zmdi-search"></i></span>
+									</div>
+									<div class="form-holder">
+										<label for="branch">Branch Name:</label>
+										<input type="text" placeholder="America" class="form-control input-step-2" id="branch" name="branch">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="email">Email Address:</label>
+										<input type="email" name="email" class="email input-step-2-1" id="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="account_name">Account Name:</label>
+										<input type="text" placeholder="Account Name" class="form-control input-step-2-1" id="account_name" name="account_name">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="account_number">Account Number:</label>
+										<input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number">
+										<span class="card"><i class="zmdi zmdi-card"></i></span>
+									</div>
+								</div>
+								<div class="form-row form-row-date form-row-step-2">
+									<div class="form-holder form-holder-2">
+										<label for="date_2" class="special-label">Expiry Date:</label>
+										<select name="date_2" id="date_2" class="form-control">
+											<option value="15" selected>15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+										</select>
+										<select name="month_2" id="month_2" class="form-control">
+											<option value="Jan" selected>Jan</option>
+											<option value="Feb">Feb</option>
+											<option value="Mar">Mar</option>
+											<option value="Apr">Apr</option>
+											<option value="May">May</option>
+										</select>
+										<select name="year_2" id="year_2" class="form-control">
+											<option value="2018" selected>2018</option>
+											<option value="2017">2017</option>
+											<option value="2016">2016</option>
+											<option value="2015">2015</option>
+											<option value="2014">2014</option>
+											<option value="2013">2013</option>
+										</select>
+									</div>
+								</div>
+							</div>
+			            </section>
+			            <!-- SECTION 3 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+			            	<span class="step-text">Confirm Details</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<h3>Comfirm Details</h3>
+								<div class="form-row table-responsive">
+									<table class="table">
+										<tbody>
+											<tr class="space-row">
+												<th>Full Name:</th>
+												<td id="fullname-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Email Address:</th>
+												<td id="email-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Phone Number:</th>
+												<td id="phone-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Address Location:</th>
+												<td id="address-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Gender:</th>
+												<td id="gender-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Account Name:</th>
+												<td id="account-name-val"></td>
+											</tr>
+											<tr class="space-row">
+												<th>Account Number:</th>
+												<td id="account-number-val"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+			            </section>
+		        	</div>
+		        </form>
+			</div>
+        </div>
+        </div>
+        <!-- End -->
 </div>
 </div>

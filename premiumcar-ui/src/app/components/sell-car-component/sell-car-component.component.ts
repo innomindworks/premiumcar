@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MasterServicesService } from 'src/app/services/master-services.service';
 
 @Component({
   selector: 'app-sell-car-component',
@@ -7,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellCarComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private masterServicesService: MasterServicesService) 
+  { 
+
+  }
+
   yearList;
+  carModelsList: Array<Object>;
+  modelsList:object;
+  carName:String;
+  modelName:String;
+  
   ngOnInit() {
     this.getListOfYears();
+    this.getCarModelsList();
   }
 
   getListOfYears() {
@@ -21,5 +32,26 @@ export class SellCarComponentComponent implements OnInit {
       years.push(n-i);    
     }
     this.yearList = years;
+  }
+
+  getCarModelsList(){
+    this.masterServicesService.getCarModelsList().subscribe(data =>{
+      this.carModelsList = data["carModelsList"];
+    });
+  };
+
+  onChangeCarList(carName){
+    this.carName = carName;
+    var tempList;
+    this.carModelsList.forEach(function(value){
+        if(value["key"]==carName){
+          tempList = value["data"];
+        }
+    });
+    this.modelsList = tempList;
+  };
+
+  onChangeModelList(modelName){
+    this.modelName = modelName;
   }
 }

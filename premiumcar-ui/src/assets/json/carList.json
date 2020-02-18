@@ -1,10 +1,41 @@
-[
-    {"IMEI" : 1234,"Name" : "Iphone", "Company" : "Apple", "OS" : "iOS 13", "RAM" : 16, "Price" : 100000},
-    {"IMEI" : 1235,"Name" : "Galaxy", "Company" : "Samsung", "OS" : "Android", "RAM" : 5, "Price" : 10000},
-    {"IMEI" : 1236,"Name" : "K5 Vibe Note", "Company" : "Lenovo", "OS" : "Android", "RAM" : 16, "Price" : 12000},
-    {"IMEI" : 1237,"Name" : "Experia", "Company" : "Sony", "OS" : "Windows", "RAM" : 18, "Price" : 15000},
-    {"IMEI" : 1238,"Name" : "Pure View", "Company" : "Nokia", "OS" : "Windows", "RAM" : 15, "Price" : 18000},
-    {"IMEI" : 1239,"Name" : "Pure View 1", "Company" : "Nokia", "OS" : "Windows", "RAM" : 15, "Price" : 20000},
-    {"IMEI" : 1240,"Name" : "Pure View2", "Company" : "Nokia", "OS" : "Windows", "RAM" : 15, "Price" : 22000},
-    {"IMEI" : 1241,"Name" : "Pure View3", "Company" : "Nokia", "OS" : "Windows", "RAM" : 15, "Price" : 25000}
-  ]
+{
+	"carModelsList": [{
+		"key": "BMW",
+		"data": [{
+			"value": "3 Series"
+		}, {
+			"value": "5 Series"
+		}, {
+			"value": "7 Series"
+		}, {
+			"value": "8 Series"
+		}, {
+			"value": "X1"
+		}, {
+			"value": "X3"
+		}, {
+			"value": "X4"
+		}, {
+			"value": "X5"
+		}, {
+			"value": "X6"
+		}, {
+			"value": "X7"
+		}, {
+			"value": "3 Series Gran Turismo"
+		}, {
+			"value": "6 Series Gran Turismo"
+		}, {
+			"value": "M2 Competition"
+		}, {
+			"value": "Z4 M40i"
+		}, {
+			"value": "M5 Competition"
+		}]
+	}],
+	"cities": [{
+		"cityName": "INDORE"
+	}, {
+		"cityName": "BHOPAL"
+	}]
+}

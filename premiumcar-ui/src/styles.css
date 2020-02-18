@@ -182,6 +182,7 @@ background:url('assets/img/banner_3.jpg');
   background-size: cover;
   background-position: center center;
   margin-top: -3.5%;
+  min-height: 430px;
 }
 
 

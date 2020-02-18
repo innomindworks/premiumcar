@@ -6,18 +6,27 @@
     
     <div class="showcasedropdown">
     
-    <select class="form-control space-right" id="selectbox1">
+    <!-- <select class="form-control space-right" id="selectbox1">
             <option>BMW</option>
             <option>Audi</option>
             <option>Mercedes</option>
-            </select>
+            </select> -->
+    <select class="form-control space-right" id="selectbox1" formControlName="modelControl" (change)="onChangeCarList($event.target.value)">
+            <option [value] = "null" disabled selected hidden>---Please select Car---</option>
+            <option [value]="carModels.key" *ngFor="let carModels of carModelsList">{{carModels.key}}</option>
+    </select>
      
-     <select class="form-control" id="selectbox2">
+     <!-- <select class="form-control" id="selectbox2">
             <option>BMW</option>
             <option>Audi</option>
             <option>Mercedes</option>
-            </select>
-            <button type="button" class="btn btn-primary" id="button3" (click)="searchCar()">Search</button>
+            </select> -->
+    <select class="form-control space-right" id="selectbox1" formControlName="modelControl" (change)="onChangeModelList($event.target.value)">
+            <option [value] = "null" disabled selected hidden>---Please select Car Model---</option>
+            <option [value]="models.value" *ngFor="let models of modelsList">{{models.value}}</option>
+    </select>
+    
+    <button type="button" class="btn btn-primary" id="button3" (click)="searchCar()">Search</button>
     </div>
     
     </div>

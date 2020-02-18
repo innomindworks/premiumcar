@@ -21,16 +21,21 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/json",
+              "src/fonts"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "node_modules/font-awesome/css/font-awesome.css"
+              
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/jquery-3.4.1.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/jquery.steps.js",
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {
@@ -92,15 +97,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+              
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css",
-              "node_modules/font-awesome/css/font-awesome.css"
+              
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/jquery-3.4.1.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              
             ]
           }
         },
