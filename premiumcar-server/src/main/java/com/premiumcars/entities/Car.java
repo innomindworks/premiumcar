@@ -27,6 +27,12 @@ public class Car {
 	@JoinColumn(name = "car_model_id")
 	private CarModel carModel;
 
+	@OneToOne(fetch = FetchType.LAZY)
+	private Varient varient;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	private Specification carSpecs;
+	
 	private String manufacturingYear;
 	private Integer pastRunInKm;
 	private BigDecimal expectedPrice;

@@ -1,29 +1,36 @@
 package com.premiumcars.modal;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.premiumcars.entities.City;
+import com.premiumcars.entities.Ownership;
+
+@JsonInclude(JsonInclude.Include.NON_NULL) 
 public class DropDownlist {
 
-	private String key;
-	private List<String> value;
+	private List<DropDown> carModelsList;
+	private List<City> cities;
+	private List<Ownership> ownership;
 	
-	
-	public String getKey() {
-		return key;
+	public List<City> getCities() {
+		return cities;
 	}
-	public void setKey(String key) {
-		this.key = key;
+	public void setCities(List<City> cities) {
+		this.cities = cities;
 	}
-	public List<String> getValue() {
-		return value;
+	public List<Ownership> getOwnership() {
+		return ownership;
 	}
-	public void setValue(List<String> value) {
-		this.value = value;
+	public void setOwnership(List<Ownership> ownership) {
+		this.ownership = ownership;
 	}
-	
-	
-	
+	public List<DropDown> getCarModelsList() {
+		return carModelsList;
+	}
+	public void setCarModelsList(List<DropDown> carModelsList) {
+		this.carModelsList = carModelsList;
+	}
 	
 }

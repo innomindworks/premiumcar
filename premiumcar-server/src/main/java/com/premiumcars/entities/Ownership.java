@@ -16,20 +16,53 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @Entity
 @Table(name="ownership")
+@JsonInclude(JsonInclude.Include.NON_NULL) 
 public class Ownership {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonIgnore
 	private Integer ownerId;
 	
 	private String ownerName;
 	
-    @Enumerated(EnumType.STRING)
-    @Column(length = 20)
-    private OwnerType ownerType;
+    private String ownerType;
+    
+	public Ownership(String ownerType) {
+		super();
+		this.ownerType = ownerType;
+	}
 	
+	public Ownership() {
+		super();
+	}
+	
+	public String getOwnerType() {
+		return ownerType;
+	}
+	public void setOwnerType(String ownerType) {
+		this.ownerType = ownerType;
+	}
+	public City getCity() {
+		return city;
+	}
+	public void setCity(City city) {
+		this.city = city;
+	}
+	public List<Car> getCar() {
+		return car;
+	}
+	public void setCar(List<Car> car) {
+		this.car = car;
+	}
+	public void setOwnerId(Integer ownerId) {
+		this.ownerId = ownerId;
+	}
 	private String ownerAddLin1;
 	
 	private String ownerAddLin2;
@@ -41,8 +74,9 @@ public class Ownership {
 	@OneToMany(mappedBy = "owner",cascade = CascadeType.ALL)
 	private List<Car> car;
 	
-	private int pinCode;
-	public int getOwnerId() {
+	private String pinCode;
+	
+	public Integer getOwnerId() {
 		return ownerId;
 	}
 	public void setOwnerId(int ownerId) {
@@ -68,10 +102,10 @@ public class Ownership {
 		this.ownerAddLin2 = ownerAddLin2;
 	}
 	
-	public int getPinCode() {
+	public String getPinCode() {
 		return pinCode;
 	}
-	public void setPinCode(int pinCode) {
+	public void setPinCode(String pinCode) {
 		this.pinCode = pinCode;
 	}
 	

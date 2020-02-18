@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.premiumcars.modal.ApplicationResponse;
+import com.premiumcars.modal.DropDownlist;
 import com.premiumcars.service.CarModelService;
 
 @RestController
@@ -17,10 +18,8 @@ public class CarModelController {
 	
 	
 	@GetMapping("/dropdowns")
-	ApplicationResponse getDropDownList() {
-		ApplicationResponse response = new ApplicationResponse();
-		 response.setResponse(carModelService.getDropDownList());
-		 return response;
+	public DropDownlist getDropDownList() {
+		return carModelService.getDropDownList();
 	}
 
 }

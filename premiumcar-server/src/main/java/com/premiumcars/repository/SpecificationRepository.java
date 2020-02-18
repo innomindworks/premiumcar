@@ -3,7 +3,6 @@ package com.premiumcars.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.premiumcars.entities.Ownership;
 import com.premiumcars.entities.Specification;
 
 @Repository
